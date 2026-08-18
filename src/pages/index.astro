@@ -1,75 +1,124 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import Hero from "../components/Hero.astro";
+import Background from "../images/pexels-code-1839406_1920.jpg";
+
 import CodeText from "../components/CodeText.astro";
 import ButtonFilled from "../components/ButtonFilled.astro";
 import ButtonBorder from "../components/ButtonBorder.astro";
 import { Image } from "astro:assets";
+
 import Steven from "../images/steven.jpeg";
+import StevenProgramming from "../images/steven-programming.jpeg";
+import Signature from "../images/signature.png";
+
+import GehringEnKetelaarsLogo from "../images/company-logos/gehring-en-ketelaars.png";
+import FloraliaLogo from "../images/company-logos/floralia.png";
 ---
 
 <Layout>
-	<div class="relative min-h-screen">
-		<!-- Side image on >lg, background image on <lg -->
-		<div class="absolute inset-0 lg:left-1/2">
-			<img
-				src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg"
-				alt="Coding image"
-				class="h-full w-full object-cover brightness-50"
-			/>
+	<Hero image={Background} alt="Coding image">
+		<Image
+			src={Steven}
+			width={500}
+			height={500}
+			class="rounded-full h-30 w-30"
+			alt="Steven Erik Martijn Roest"
+		/>
 
-			<div
-				class="absolute inset-0 bg-linear-to-b from-transparent to-sem-black"
-			>
-			</div>
+		<div>
+			<CodeText>
+				<span class="text-sem-orange">*</span> Hello World is a developers
+				first program
+			</CodeText>
+
+			<h1>
+				Hello World<span class="text-sem-orange">*</span>,
+				<br />
+				I'm Steven
+			</h1>
 		</div>
 
-		<!-- Content in container -->
+		<p class="max-w-xl">
+			20-year-old developer from Apeldoorn, The Netherlands 🇳🇱️
+		</p>
+
+		<p class="max-w-xl">
+			Studying ICT at HAN University of Applied Sciences, graduated
+			cum-laude from Software Development at Aventus Apeldoorn.
+		</p>
+
+		<p class="max-w-xl">
+			Working at SOS Events as Full-Stack Developer and creating
+			full-stack websites, dashboards and custom made applications.
+		</p>
+
+		<div class="flex flex-wrap gap-4">
+			<ButtonFilled href="#">Download my CV &rarr;</ButtonFilled>
+			<ButtonBorder href="#">Contact me</ButtonBorder>
+		</div>
+	</Hero>
+
+	<div class="container" id="about">
 		<div
-			class="relative z-10 container min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-10"
+			class="bg-white/16 grid grid-cols-1 lg:grid-cols-2 rounded-lg overflow-hidden mt-25"
 		>
-			<div class="flex flex-col justify-center items-start gap-5">
-				<Image
-					src={Steven}
-					width={500}
-					height={500}
-					class="rounded-full h-30 w-30"
-					alt="Steven Erik Martijn Roest"
-				/>
+			<div class="p-8 order-2 lg:order-1">
+				<h2 class="mb-3">About Me</h2>
 
-				<div>
-					<CodeText>
-						<span class="text-sem-orange">*</span> Hello World is a developers
-						first program
-					</CodeText>
+				<div class="flex flex-col gap-5 mb-3">
+					<p>
+						Hello world! My name is Steven (Erik Martijn) Roest, a
+						20 year old developer from Apeldoorn, the Netherlands
+						🇳🇱. I expertise in Full-Stack web and software
+						development, both for SOS Events and in my free time my
+						own company: stevenem.
+					</p>
 
-					<h1>
-						Hello World<span class="text-sem-orange">*</span>,
-						<br />
-						I'm Steven
-					</h1>
+					<p>
+						Since I was young, I only could talk about computers.
+						When I was around 9 years old, I already made some of my
+						first code and now 11 years later, it has not left me.
+						In 2022, after graduating from the MAVO, I started my
+						course Software Development at Aventus in Apeldoorn.
+						After doing four years in three years, and graduating
+						cum-laude, I started the course ICT at the HAN
+						University of Applied Sciences in Arnhem in 2025.
+					</p>
+
+					<p>
+						Next to school, I work at SOS Events. After two
+						successful internships and a side job, I signed my fixed
+						contract in 2025.
+					</p>
 				</div>
 
-				<p class="max-w-xl">
-					20-year-old developer from Apeldoorn, The Netherlands 🇳🇱️
-				</p>
+				<Image src={Signature} alt={"Signature of Steven Roest"} />
+			</div>
 
-				<p class="max-w-xl">
-					Studying ICT at HAN University of Applied Sciences,
-					graduated cum-laude from Software Development at Aventus
-					Apeldoorn.
-				</p>
+			<div class="relative order-1 lg:order-2">
+				<Image
+					src={StevenProgramming}
+					class="w-full h-full object-cover"
+					alt="Steven behind a PC programming"
+				/>
 
-				<p class="max-w-xl">
-					Working at SOS Events as Full-Stack Developer and creating
-					full-stack websites, dashboards and custom made
-					applications.
-				</p>
-
-				<div class="flex flex-wrap gap-4">
-					<ButtonFilled href="#">Download my CV &rarr;</ButtonFilled>
-					<ButtonBorder href="#">Contact me</ButtonBorder>
+				<div
+					class="absolute inset-0 bg-linear-to-t lg:bg-linear-to-r from-sem-light-gray to-transparent"
+				>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<div class="container flex flex-wrap justify-center gap-x-3 gap-y-5 mt-25">
+		<Image
+			src={GehringEnKetelaarsLogo}
+			alt={"Logo of Gehring en Ketelaars"}
+		/>
+		<Image src={FloraliaLogo} alt={"Logo of Floralia Voorthuizen"} />
+	</div>
+
+	<div class="mt-25"></div>
 </Layout>
