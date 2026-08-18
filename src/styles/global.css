@@ -2,6 +2,8 @@
 
 /* Fonts */
 @import "@fontsource/poppins";
+@import "@fontsource-variable/dm-sans/wght.css";
+@import '@fontsource-variable/jetbrains-mono/wght.css';
 
 @theme {
     /* Colors */
@@ -12,10 +14,25 @@
 
     /* Fonts */
     --font-poppins: 'Poppins', sans-serif;
+    --font-dm-sans: 'DM Sans Variable', sans-serif;
+    --font-jetbrains-mono: 'Jetbrains Mono Variable', monospace;
 }
 
 @utility container {
     @apply mx-auto px-5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-dm-sans font-semibold;
+}
+
+h1 {
+    @apply text-4xl;
 }
 
 button {

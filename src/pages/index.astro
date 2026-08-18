@@ -1,9 +1,75 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import CodeText from "../components/CodeText.astro";
+import ButtonFilled from "../components/ButtonFilled.astro";
+import ButtonBorder from "../components/ButtonBorder.astro";
+import { Image } from "astro:assets";
+import Steven from "../images/steven.jpeg";
 ---
 
 <Layout>
-	<div class="container">
-		<div class="h-[2000px]"></div>
+	<div class="relative min-h-screen">
+		<!-- Side image on >lg, background image on <lg -->
+		<div class="absolute inset-0 lg:left-1/2">
+			<img
+				src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg"
+				alt="Coding image"
+				class="h-full w-full object-cover brightness-50"
+			/>
+
+			<div
+				class="absolute inset-0 bg-linear-to-b from-transparent to-sem-black"
+			>
+			</div>
+		</div>
+
+		<!-- Content in container -->
+		<div
+			class="relative z-10 container min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-10"
+		>
+			<div class="flex flex-col justify-center items-start gap-5">
+				<Image
+					src={Steven}
+					width={500}
+					height={500}
+					class="rounded-full h-30 w-30"
+					alt="Steven Erik Martijn Roest"
+				/>
+
+				<div>
+					<CodeText>
+						<span class="text-sem-orange">*</span> Hello World is a developers
+						first program
+					</CodeText>
+
+					<h1>
+						Hello World<span class="text-sem-orange">*</span>,
+						<br />
+						I'm Steven
+					</h1>
+				</div>
+
+				<p class="max-w-xl">
+					20-year-old developer from Apeldoorn, The Netherlands 🇳🇱️
+				</p>
+
+				<p class="max-w-xl">
+					Studying ICT at HAN University of Applied Sciences,
+					graduated cum-laude from Software Development at Aventus
+					Apeldoorn.
+				</p>
+
+				<p class="max-w-xl">
+					Working at SOS Events as Full-Stack Developer and creating
+					full-stack websites, dashboards and custom made
+					applications.
+				</p>
+
+				<div class="flex flex-wrap gap-4">
+					<ButtonFilled href="#">Download my CV &rarr;</ButtonFilled>
+					<ButtonBorder href="#">Contact me</ButtonBorder>
+				</div>
+			</div>
+		</div>
 	</div>
 </Layout>
