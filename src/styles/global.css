@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Fonts */
+@import "@fontsource/poppins";
+
+@theme {
+    /* Colors */
+    --color-sem-black: #161616;
+    --color-sem-gray: #939393;
+    --color-sem-orange: #D9C48B;
+    --color-sem-green: #3FE058;
+
+    /* Fonts */
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+@utility container {
+    @apply mx-auto px-5;
+}
+
+button {
+    @apply cursor-pointer;
+}

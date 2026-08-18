@@ -1,0 +1,111 @@
+---
+import SocialButton from "./SocialButton.astro";
+import Logo from "../images/logo-white.svg";
+import Icon from "../images/icon-white.svg";
+
+const menuItems = [
+    { label: "Home", href: "#" },
+    { label: "About", href: "#" },
+    { label: "Projects", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Contact", href: "#" },
+];
+---
+
+<header
+    class="sticky top-0 bg-linear-to-b from-black to-transparent"
+    x-data="{ open: false }"
+>
+    <div class="container flex justify-between gap-5 py-8">
+        <!-- Desktop -->
+        <a href="/" class="shrink-0 hidden md:block">
+            <Logo />
+        </a>
+
+        <div class="hidden md:flex gap-10 items-center">
+            <nav aria-label="Main">
+                <ul class="flex gap-5">
+                    {
+                        menuItems.map((item) => (
+                            <li>
+                                <a href={item.href}>{item.label}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+
+            <div class="flex gap-2 items-center">
+                <SocialButton
+                    icon="fa-brands fa-github"
+                    href="https://github.com/stevenemr"
+                />
+                <SocialButton
+                    icon="fa-brands fa-linkedin"
+                    href="https://linkedin.com/in/stevenemr"
+                />
+                <SocialButton
+                    icon="fa-solid fa-envelope"
+                    href="mailto:semroest@proton.me"
+                />
+            </div>
+        </div>
+
+        <!-- Mobile -->
+        <a href="/" class="shrink-0 md:hidden">
+            <Icon />
+        </a>
+
+        <button class="md:hidden" @click="open = true" aria-label="Open menu">
+            <i class="fa-solid fa-bars text-3xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+        class="fixed inset-0 bg-sem-black px-5 py-8 md:hidden"
+        x-show="open"
+        x-cloak
+        x-transition:enter="transition duration-300 ease-out"
+        x-transition:enter-start="opacity-0 -translate-y-full"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition duration-200 ease-in"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-full"
+    >
+        <button
+            @click="open = false"
+            aria-label="Close menu"
+            class="ml-auto block"
+        >
+            <i class="fa-solid fa-xmark text-3xl"></i>
+        </button>
+
+        <nav aria-label="Mobile" class="mt-10">
+            <ul class="flex flex-col items-center gap-6 text-2xl">
+                {
+                    menuItems.map((item) => (
+                        <li>
+                            <a href={item.href}>{item.label}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+
+        <div class="flex justify-center gap-3 items-center mt-10">
+            <SocialButton
+                icon="fa-brands fa-github"
+                href="https://github.com/stevenemr"
+            />
+            <SocialButton
+                icon="fa-brands fa-linkedin"
+                href="https://linkedin.com/in/stevenemr"
+            />
+            <SocialButton
+                icon="fa-solid fa-envelope"
+                href="mailto:semroest@proton.me"
+            />
+        </div>
+    </div>
+</header>
