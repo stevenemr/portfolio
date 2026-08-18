@@ -1,0 +1,61 @@
+---
+import Logo from "../images/logo-white.svg";
+import SocialButton from "./SocialButton.astro";
+
+const menuItems = [
+    { label: "Home", href: "#" },
+    { label: "About", href: "#" },
+    { label: "Projects", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Contact", href: "#" },
+];
+---
+
+<footer>
+    <div class="bg-linear-to-b from-transparent to-black py-8">
+        <div
+            class="container flex justify-between items-center gap-5 flex-wrap"
+        >
+            <div class="flex flex-col gap-3">
+                <Logo />
+
+                <div class="flex gap-2 items-center">
+                    <SocialButton
+                        icon="fa-brands fa-github"
+                        href="https://github.com/stevenemr"
+                    />
+                    <SocialButton
+                        icon="fa-brands fa-linkedin"
+                        href="https://linkedin.com/in/stevenemr"
+                    />
+                    <SocialButton
+                        icon="fa-solid fa-envelope"
+                        href="mailto:semroest@proton.me"
+                    />
+                </div>
+            </div>
+
+            <nav aria-label="Footer">
+                <ul class="flex flex-wrap gap-5">
+                    {
+                        menuItems.map((item) => (
+                            <li>
+                                <a href={item.href}>{item.label}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="bg-black py-5 text-center">
+        <div
+            class="container flex flex-wrap items-center gap-x-5 gap-y-2 justify-center opacity-25"
+        >
+            <p>Website designed and developed by:</p>
+
+            <Logo height={27} width={148} />
+        </div>
+    </div>
+</footer>
