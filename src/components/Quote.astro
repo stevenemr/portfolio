@@ -1,0 +1,38 @@
+---
+interface Props {
+    authorImage: ImageMetadata;
+    author: string;
+}
+
+const { authorImage, author } = Astro.props;
+
+import Quote from "../images/quote.svg";
+import { Image } from "astro:assets";
+---
+
+<div class="flex flex-col gap-5">
+    <Quote />
+
+    <p>
+        &quot;<slot />&quot;
+    </p>
+
+    <div class="flex justify-between">
+        <div class="flex items-center gap-5">
+            <Image
+                src={authorImage}
+                alt={author}
+                height={100}
+                width={100}
+                class="rounded-full"
+            />
+
+            <div>
+                <h3>{author}</h3>
+                <slot name="sub-author" />
+            </div>
+        </div>
+
+        <Quote class="rotate-180 hidden md:block" />
+    </div>
+</div>

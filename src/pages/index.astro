@@ -31,6 +31,10 @@ import LeisureKingLogo from "../images/work/leisureking.png";
 // Education Images
 import HanLogo from "../images/education/han.png";
 import MheenparkLogo from "../images/education/mheenpark.png";
+
+// Quote
+import GehringEnKetelaarsQuote from "../images/quotes/gehring-en-ketelaars.png";
+import Quote from "../components/Quote.astro";
 ---
 
 <Layout>
@@ -285,4 +289,29 @@ import MheenparkLogo from "../images/education/mheenpark.png";
 			</WorkEducationCard>
 		</div>
 	</div>
+
+	<div class="container mt-25">
+		<Quote
+			author="Gehring en Ketelaars"
+			authorImage={GehringEnKetelaarsQuote}
+		>
+			Steven was ontzettend behulpzaam, vriendelijk en altijd goed
+			bereikbaar. Met veel geduld en toewijding ging hij aan de slag, ook
+			met onderdelen die nieuw voor hem waren. Hij bleef net zo lang
+			puzzelen tot alles klopte – en met resultaat: hij heeft een
+			prachtige website gemaakt die niet alleen mooi en uitnodigend is,
+			maar ook zeer gebruiksvriendelijk. Wij zijn er ontzettend blij mee
+			en raden Steven van harte aan!
+
+			<a
+				href="https://www.gehringenketelaars.nl"
+				class="underline text-sem-orange"
+				slot="sub-author"
+			>
+				www.gehringenketelaars.nl
+			</a>
+		</Quote>
+	</div>
+
+	<div class="mt-25"></div>
 </Layout>
