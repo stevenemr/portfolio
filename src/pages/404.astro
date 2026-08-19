@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Icon from "../images/icon-white.svg";
+import { Image } from "astro:assets";
+import ButtonFilled from "../components/ButtonFilled.astro";
+---
+
+<Layout>
+    <div class="container flex flex-col gap-5 items-center page-offset">
+        <div class="flex justify-center gap-1 font-dm-sans font-semibold">
+            <p class="text-7xl">4</p>
+            <Image
+                src={Icon}
+                alt={"Stevenem Icon Logo"}
+                class={"hover:animate-spin"}
+            />
+            <p class="text-7xl">4</p>
+        </div>
+
+        <p>
+            It's seems like you're lost. Dont worry, the page is probably
+            deleted or temporarily offline.
+        </p>
+
+        <p>Click the button below to get you back on track.</p>
+
+        <ButtonFilled href="/"> Take me home... </ButtonFilled>
+    </div>
+</Layout>

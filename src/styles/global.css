@@ -47,3 +47,7 @@ h2 {
 button {
     @apply cursor-pointer;
 }
+
+.page-offset {
+    @apply mt-35 mb-15;
+}
