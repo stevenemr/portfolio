@@ -1,0 +1,64 @@
+---
+interface Props {
+    image: ImageMetadata;
+    title: string;
+    period: string;
+    tags: string[];
+    readMoreLink?: string;
+    viewLink: string;
+    reverse?: boolean;
+}
+
+const {
+    image,
+    title,
+    period,
+    tags,
+    readMoreLink = null,
+    viewLink,
+    reverse = false,
+} = Astro.props;
+
+import ButtonFilled from "./ButtonFilled.astro";
+import ButtonBorder from "./ButtonBorder.astro";
+import Tag from "./Tag.astro";
+---
+
+<article class="grid grid-cols-2 gap-30">
+    <img
+        src={image.src}
+        class={`w-full aspect-4/2.5 object-cover rounded-lg ${reverse ? "order-2" : ""}`}
+    />
+
+    <div class={`flex flex-col gap-3 items-start ${reverse ? "order-1" : ""}`}>
+        <h3>
+            {title} &nbsp;
+            <span class="text-sem-gray">- {period}</span>
+        </h3>
+
+        <div class="flex gap-2 flex-wrap">
+            {tags.map((tag) => <Tag>{tag}</Tag>)}
+        </div>
+
+        <div>
+            <slot />
+        </div>
+
+        <div class="flex gap-4">
+            {
+                readMoreLink ? (
+                    <ButtonFilled href={readMoreLink}>
+                        {" "}
+                        Read More &rarr;{" "}
+                    </ButtonFilled>
+                ) : null
+            }
+
+            <ButtonBorder href={viewLink} newTab>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                {" "}
+                View Website
+            </ButtonBorder>
+        </div>
+    </div>
+</article>

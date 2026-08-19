@@ -15,6 +15,11 @@ import Signature from "../images/signature.png";
 
 import GehringEnKetelaarsLogo from "../images/company-logos/gehring-en-ketelaars.png";
 import FloraliaLogo from "../images/company-logos/floralia.png";
+
+import ProjectCard from "../components/ProjectCard.astro";
+
+import GehringEnKetelaarsProject from "../images/projects/gehring-en-ketelaars.png";
+import FloraliaVoorthuizenProject from "../images/projects/floralia-voorthuizen.png";
 ---
 
 <Layout>
@@ -118,6 +123,52 @@ import FloraliaLogo from "../images/company-logos/floralia.png";
 			alt={"Logo of Gehring en Ketelaars"}
 		/>
 		<Image src={FloraliaLogo} alt={"Logo of Floralia Voorthuizen"} />
+	</div>
+
+	<div class="container mt-25" id="projects">
+		<div class="text-center mb-10">
+			<CodeText>The work I'm proud of</CodeText>
+			<h2>Projects</h2>
+		</div>
+
+		<div class="flex flex-col gap-20">
+			<ProjectCard
+				image={GehringEnKetelaarsProject}
+				title="Website Gehring en Ketelaars"
+				period="Feb 2025"
+				tags={["WordPress", "Bootstrap", "Custom Theme"]}
+				viewLink="https://gehringenketelaars.nl"
+			>
+				<p>
+					Realised my first professional web development project for
+					Theaterduo Gehring en Ketelaars, focusing on easy content
+					management. Built using WordPress, the most popular CMS in
+					the world.
+				</p>
+			</ProjectCard>
+
+			<ProjectCard
+				image={FloraliaVoorthuizenProject}
+				title="Floralia Voorthuizen Votingwebsite"
+				period="2024-now"
+				tags={[
+					"PHP",
+					"TailwindCSS",
+					"Dashboard development",
+					"Full-stack",
+				]}
+				viewLink="https://gehringenketelaars.nl"
+				reverse
+			>
+				<p>
+					In 2024 I created a voting website for the Floralia
+					Voorthuizen Bloemencorso (flower parade). Five thousand
+					tickets were handed to the public, so they can vote for
+					their favorite flower wagons. Each year I have made some
+					updates.
+				</p>
+			</ProjectCard>
+		</div>
 	</div>
 
 	<div class="mt-25"></div>

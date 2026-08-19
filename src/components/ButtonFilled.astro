@@ -1,14 +1,16 @@
 ---
 interface Props {
   href: string;
+  newTab?: boolean;
 }
 
-const { href } = Astro.props;
+const { href, newTab = false } = Astro.props;
 ---
 
 <a
   href={href}
   class="inline-block bg-white py-3 px-10 text-sem-black rounded-md transition-transform hover:scale-98"
+  target={newTab ? "_blank" : "_self"}
 >
   <slot />
 </a>
