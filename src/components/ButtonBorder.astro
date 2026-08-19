@@ -1,16 +1,26 @@
 ---
 interface Props {
-  href: string;
+  href?: string;
   newTab?: boolean;
+  type?: "submit" | "button";
 }
 
-const { href, newTab = false } = Astro.props;
+const { href, newTab = false, type } = Astro.props;
+
+const classes =
+  "inline-block border border-white py-3 px-10 text-white rounded-md transition-transform hover:scale-98";
 ---
 
-<a
-  href={href}
-  class="inline-block border border-white py-3 px-10 text-white rounded-md transition-transform hover:scale-98"
-  target={newTab ? "_blank" : "_self"}
->
-  <slot />
-</a>
+{type === "submit" ? (
+  <button type="submit" class={classes}>
+    <slot />
+  </button>
+) : (
+  <a
+    href={href}
+    class={classes}
+    target={newTab ? "_blank" : "_self"}
+  >
+    <slot />
+  </a>
+)}

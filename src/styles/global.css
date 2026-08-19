@@ -23,35 +23,41 @@
     @apply mx-auto px-5;
 }
 
-html {
-    @apply scroll-smooth;
-}
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    @apply font-dm-sans font-semibold;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-dm-sans font-semibold;
+    }
 
-h1 {
-    @apply text-5xl;
-}
+    h1 {
+        @apply text-5xl;
+    }
 
-h2 {
-    @apply text-4xl;
-}
+    h2 {
+        @apply text-4xl;
+    }
 
-h3 {
-    @apply text-3xl;
-}
+    h3 {
+        @apply text-3xl;
+    }
 
-button {
-    @apply cursor-pointer;
-}
+    h4 {
+        @apply text-2xl;
+    }
 
-.page-offset {
-    @apply mt-35 mb-15;
+    button {
+        @apply cursor-pointer;
+    }
+
+    .page-offset {
+        @apply mt-35 mb-15;
+    }
 }

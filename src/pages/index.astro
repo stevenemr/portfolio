@@ -35,6 +35,10 @@ import MheenparkLogo from "../images/education/mheenpark.png";
 // Quote
 import GehringEnKetelaarsQuote from "../images/quotes/gehring-en-ketelaars.png";
 import Quote from "../components/Quote.astro";
+import LargeSocialButton from "../components/LargeSocialButton.astro";
+
+import Input from "../components/form/Input.astro";
+import TextArea from "../components/form/TextArea.astro";
 ---
 
 <Layout>
@@ -75,8 +79,8 @@ import Quote from "../components/Quote.astro";
 		</p>
 
 		<div class="flex flex-wrap gap-4">
-			<ButtonFilled href="#">Download my CV &rarr;</ButtonFilled>
-			<ButtonBorder href="#">Contact me</ButtonBorder>
+			<ButtonFilled href="/">Download my CV &rarr;</ButtonFilled>
+			<ButtonBorder href="#contact">Contact me</ButtonBorder>
 		</div>
 	</Hero>
 
@@ -313,5 +317,74 @@ import Quote from "../components/Quote.astro";
 		</Quote>
 	</div>
 
-	<div class="mt-25"></div>
+	<div class="container my-25" id="contact">
+		<div class="text-center mb-10">
+			<CodeText>Get in touch</CodeText>
+			<h2 class="mb-3">Contact</h2>
+
+			<p>Have an idea or project in mind? Let's talk.</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+			<div class="flex flex-col gap-8 order-2 md:order-1">
+				<LargeSocialButton
+					icon="fa-solid fa-envelope"
+					textAbove="Email"
+					textBelow="hi@stevenem.nl"
+					href="mailto:hi@stevenem.nl"
+				/>
+
+				<LargeSocialButton
+					icon="fa-brands fa-linkedin-in"
+					textAbove="Linkedin"
+					textBelow="/in/stevenemr"
+					href="https://linkedin.com/in/stevenemr"
+				/>
+
+				<LargeSocialButton
+					icon="fa-brands fa-github"
+					textAbove="GitHub"
+					textBelow="/stevenemr"
+					href="https://github.com/stevenemr"
+				/>
+
+				<p class="text-sem-green">
+					<i class="fa-solid fa-circle"></i> Available for new projects
+				</p>
+			</div>
+
+			<form
+				method="POST"
+				class="flex flex-col gap-5 order-1 md:order-2"
+				action="https://formsubmit.co/c061628fcb25ab6925f33edef2e0e078"
+			>
+				<input type="hidden" name="_next" value="https://stevenem.nl" />
+
+				<Input
+					type="text"
+					name="name"
+					placeholder="Your name"
+					label="Name"
+					required
+				/>
+
+				<Input
+					type="email"
+					name="email"
+					placeholder="Your email"
+					label="Email"
+					required
+				/>
+
+				<TextArea
+					name="message"
+					placeholder="Tell me about it..."
+					label="Message"
+					required
+				/>
+
+				<ButtonFilled type="submit">Send message </ButtonFilled>
+			</form>
+		</div>
+	</div>
 </Layout>

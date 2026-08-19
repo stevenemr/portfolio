@@ -1,0 +1,26 @@
+---
+interface Props {
+    icon: string;
+    textAbove: string;
+    textBelow: string;
+    href: string;
+}
+
+const { icon, textAbove, textBelow, href } = Astro.props;
+
+import CodeText from "./CodeText.astro";
+---
+
+<a href={href} class="inline-flex items-center gap-5 w-fit" target="_blank">
+    <div
+        class="bg-white text-sem-black h-18 w-18 rounded-full flex justify-center items-center"
+    >
+        <i class={`${icon} text-3xl`}></i>
+    </div>
+
+    <div>
+        <CodeText>{textAbove}</CodeText>
+
+        <h4 class="font-jetbrains-mono">{textBelow}</h4>
+    </div>
+</a>
