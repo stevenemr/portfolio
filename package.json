@@ -23,6 +23,11 @@
     "tailwindcss": "^4.3.3"
   },
   "allowScripts": {
+    "workerd@1.20260815.1": true,
+    "esbuild@0.28.1": true,
     "esbuild@0.28.2": true
+  },
+  "devDependencies": {
+    "wrangler": "^4.124.0"
   }
 }
