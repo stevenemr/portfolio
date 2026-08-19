@@ -81,11 +81,23 @@ import { menuItems } from "../globals";
         <nav aria-label="Mobile" class="mt-10">
             <ul class="flex flex-col items-center gap-6 text-2xl">
                 {
-                    menuItems.map((item) => (
-                        <li>
-                            <a href={item.href}>{item.label}</a>
-                        </li>
-                    ))
+                    menuItems.map((item) =>
+                        item.isFragment && Astro.url.pathname == "/" ? (
+                            <li>
+                                <a
+                                    href={item.href}
+                                    x-data
+                                    @click="open = false"
+                                >
+                                    {item.label}
+                                </a>
+                            </li>
+                        ) : (
+                            <li>
+                                <a href={item.href}>{item.label}</a>
+                            </li>
+                        ),
+                    )
                 }
             </ul>
         </nav>
