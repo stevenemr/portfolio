@@ -42,11 +42,12 @@ import TextArea from "../components/form/TextArea.astro";
 ---
 
 <Layout>
-	<Hero image={Background} alt="Coding image">
+	<Hero image={Background} alt="PHP Code">
 		<Image
 			src={Steven}
 			width={500}
 			height={500}
+			loading="eager"
 			class="rounded-full h-30 w-30"
 			alt="Steven Erik Martijn Roest"
 		/>
@@ -358,7 +359,12 @@ import TextArea from "../components/form/TextArea.astro";
 				class="flex flex-col gap-5 order-1 md:order-2"
 				action="https://formsubmit.co/c061628fcb25ab6925f33edef2e0e078"
 			>
-				<input type="hidden" name="_next" value="https://stevenem.nl" />
+				<input
+					type="hidden"
+					name="_next"
+					value="https://stevenem.nl/thanks"
+				/>
+				<input type="hidden" name="_captcha" value="false" />
 
 				<Input
 					type="text"

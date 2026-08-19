@@ -22,11 +22,13 @@ const {
 import ButtonFilled from "./ButtonFilled.astro";
 import ButtonBorder from "./ButtonBorder.astro";
 import Tag from "./Tag.astro";
+import { Image } from "astro:assets";
 ---
 
 <article class="grid grid-cols-1 md:grid-cols-2 gap-x-30 gap-y-5">
-    <img
-        src={image.src}
+    <Image
+        src={image}
+        alt={title}
         class={`w-full aspect-4/2.5 object-cover rounded-lg ${reverse ? "md:order-2" : ""}`}
     />
 

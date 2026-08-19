@@ -2,15 +2,17 @@
 interface Props {
     icon: string;
     href: string;
+    ariaLabel?: string;
 }
 
-const { icon, href } = Astro.props;
+const { icon, href, ariaLabel = null } = Astro.props;
 ---
 
 <a
     class="flex justify-center items-center bg-white rounded-full h-8 w-8 transition-all hover:scale-95"
     href={href}
     target="_blank"
+    aria-label={ariaLabel ?? "Social media link"}
 >
     <i class={icon + " text-black text-xl"}></i>
 </a>

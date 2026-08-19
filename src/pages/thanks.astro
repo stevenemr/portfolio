@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Icon from "../images/icon-white.svg";
+import { Image } from "astro:assets";
+import ButtonFilled from "../components/ButtonFilled.astro";
+---
+
+<Layout>
+    <div class="container flex flex-col gap-5 items-center page-offset">
+        <div class="flex justify-center gap-1 font-dm-sans font-semibold">
+            <Image src={Icon} alt={"Stevenem Icon Logo"} />
+        </div>
+
+        <h1>Thank you!</h1>
+
+        <p>
+            Your message has been successfully submitted. I'll get back to you
+            as soon as possible.
+        </p>
+
+        <ButtonFilled href="/"> Take me home... </ButtonFilled>
+    </div>
+</Layout>
