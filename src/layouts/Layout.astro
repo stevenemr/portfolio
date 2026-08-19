@@ -1,8 +1,19 @@
 ---
+interface Props {
+    title: string;
+    description: string;
+    ogImage?: string;
+}
+
+const { title, description, ogImage = null } = Astro.props;
+
 import "../styles/global.css";
 
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+
+const currentUrl = Astro.url.href;
+const canonical = "https://stevenem.nl" + Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -10,7 +21,18 @@ import Footer from "../components/Footer.astro";
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>stevenem</title>
+
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonical} />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        {ogImage ? <meta property="og:image" content={ogImage} /> : null}
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:type" content="website" />
 
         <!-- Font Awesome -->
         <link
