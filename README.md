@@ -1,21 +1,19 @@
-# Astro Starter Kit: Minimal
+<img src="./src/images/logo-white.svg">
 
-```sh
-npm create astro@latest -- --template minimal
-```
+I made this portfolio to showcase my projects, work and education and contact information. This website is made with Astro, TailwindCSS and AlpineJS.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Project Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Inside of this project, you'll see the following folders and files:
 
 ```text
-/
 ├── public/
 ├── src/
+│   └── components/
+│   └── images/
+│   └── layouts/
 │   └── pages/
-│       └── index.astro
+│   └── styles/
 └── package.json
 ```
 
@@ -25,7 +23,9 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+In the `globals.ts` file, you can export functions and variables that need to be shared over different files.
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -37,7 +37,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
