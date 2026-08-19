@@ -20,6 +20,17 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 import GehringEnKetelaarsProject from "../images/projects/gehring-en-ketelaars.png";
 import FloraliaVoorthuizenProject from "../images/projects/floralia-voorthuizen.png";
+
+import WorkEducationCard from "../components/WorkEducationCard.astro";
+
+// Work/Internship Images
+import SosEventsLogo from "../images/work/sos-events.png";
+import AventusLogo from "../images/work/aventus.png";
+import LeisureKingLogo from "../images/work/leisureking.png";
+
+// Education Images
+import HanLogo from "../images/education/han.png";
+import MheenparkLogo from "../images/education/mheenpark.png";
 ---
 
 <Layout>
@@ -171,5 +182,107 @@ import FloraliaVoorthuizenProject from "../images/projects/floralia-voorthuizen.
 		</div>
 	</div>
 
-	<div class="mt-25"></div>
+	<div class="container mt-25" id="work-experience">
+		<div class="text-center mb-10">
+			<CodeText>Companies I've worked for and internships</CodeText>
+			<h2>Work Experience</h2>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+			<WorkEducationCard
+				image={SosEventsLogo}
+				title="SOS Events"
+				jobFunction="Full-Stack Developer"
+				period="Aug 2025 - now"
+				tags={["Laravel", "Tailwind", "Custom Dashboards"]}
+			>
+				Creating websites with Laravel, creating data dashboards, AI
+				integrations and custom made applications.
+			</WorkEducationCard>
+
+			<WorkEducationCard
+				image={AventusLogo}
+				title="Aventus"
+				jobFunction="Examinator"
+				period="Dec 2025 - Jan 2026"
+				tags={["React Native", "Exams"]}
+			>
+				Examinated two days (one in December, one in January) for the
+				course ‘Mobile Application Development’. Helped the first
+				examinator with questions and forms.
+			</WorkEducationCard>
+
+			<WorkEducationCard
+				image={LeisureKingLogo}
+				title="LeisureKing"
+				jobFunction="Internship"
+				period="Feb 2025 - Jun 2025"
+				tags={["Python", "Machine Learning", "Artificial Intelligence"]}
+			>
+				Creating a Machine Learned application that predicts the amount
+				of customers on a day.
+			</WorkEducationCard>
+
+			<WorkEducationCard
+				image={SosEventsLogo}
+				title="SOS Events"
+				jobFunction="Side Job Development"
+				period="Feb 2024 - Feb 2025"
+				tags={["Laravel", "Tailwind", "Custom Dashboards"]}
+			>
+				Daily PHP development across 30+ managed websites. Building
+				dashboards, custom CMS solutions, and event management tools.
+			</WorkEducationCard>
+
+			<WorkEducationCard
+				image={SosEventsLogo}
+				title="SOS Events"
+				jobFunction="Internship Webdevelopment"
+				period="Aug 2023 - Feb 2024"
+				tags={["Laravel", "Tailwind", "Custom Dashboards"]}
+			>
+				Daily PHP development across 30+ managed websites. Building
+				dashboards, custom CMS solutions, and event management tools.
+			</WorkEducationCard>
+		</div>
+	</div>
+
+	<div class="container mt-25" id="work-experience">
+		<div class="text-center mb-10">
+			<CodeText>Where I've learned developing</CodeText>
+			<h2>Education</h2>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+			<WorkEducationCard
+				image={HanLogo}
+				title="HAN University"
+				jobFunction="ICT - HBO Bachelor"
+				period="Aug 2025 - now"
+				tags={["Laravel", "Tailwind", "Custom Dashboards"]}
+			>
+				Specializing in Software Development
+			</WorkEducationCard>
+
+			<WorkEducationCard
+				image={AventusLogo}
+				title="Aventus"
+				jobFunction="Software Developer"
+				period="Aug 2022 - Jun 2025"
+				tags={["Laravel", "Tailwind", "Custom Dashboards"]}
+			>
+				Graduated cum laude, did four years in three years.
+			</WorkEducationCard>
+
+			<WorkEducationCard
+				image={MheenparkLogo}
+				title="Veluws College Mheenpark"
+				jobFunction="MAVO"
+				period="Aug 2018 - Jun 2022"
+				tags={["Laravel", "Tailwind", "Custom Dashboards"]}
+			>
+				Graduated with Economics and Techology profiles.
+			</WorkEducationCard>
+		</div>
+	</div>
 </Layout>

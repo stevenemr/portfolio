@@ -1,0 +1,40 @@
+---
+interface Props {
+    image: ImageMetadata;
+    title: string;
+    jobFunction: string;
+    period: string;
+    tags: string[];
+}
+
+const { image, title, jobFunction, period, tags } = Astro.props;
+
+import Tag from "./Tag.astro";
+import { Image } from "astro:assets";
+---
+
+<div class="bg-sem-light-gray rounded-lg p-5">
+    <div class="flex items-center gap-3 mb-5">
+        <Image
+            src={image}
+            height={80}
+            width={80}
+            class="rounded-lg"
+            alt={title + " Logo"}
+        />
+
+        <div>
+            <h3>{title}</h3>
+            <p class="text-sm">{jobFunction}</p>
+            <p class="text-sm text-sem-gray">{period}</p>
+        </div>
+    </div>
+
+    <p class="mb-5">
+        <slot />
+    </p>
+
+    <div class="flex flex-wrap gap-3">
+        {tags.map((tag) => <Tag>{tag}</Tag>)}
+    </div>
+</div>

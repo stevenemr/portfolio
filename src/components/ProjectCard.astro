@@ -24,13 +24,15 @@ import ButtonBorder from "./ButtonBorder.astro";
 import Tag from "./Tag.astro";
 ---
 
-<article class="grid grid-cols-2 gap-30">
+<article class="grid grid-cols-1 md:grid-cols-2 gap-x-30 gap-y-5">
     <img
         src={image.src}
-        class={`w-full aspect-4/2.5 object-cover rounded-lg ${reverse ? "order-2" : ""}`}
+        class={`w-full aspect-4/2.5 object-cover rounded-lg ${reverse ? "md:order-2" : ""}`}
     />
 
-    <div class={`flex flex-col gap-3 items-start ${reverse ? "order-1" : ""}`}>
+    <div
+        class={`flex flex-col gap-3 items-start ${reverse ? "md:order-1" : ""}`}
+    >
         <h3>
             {title} &nbsp;
             <span class="text-sem-gray">- {period}</span>
