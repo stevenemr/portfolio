@@ -11,5 +11,9 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [alpinejs()]
+  integrations: [alpinejs()],
+
+  redirects: {
+    '/about': '/#about',
+  }
 });
