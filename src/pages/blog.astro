@@ -1,14 +1,58 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+
+import BlogImage from "../images/edar-diary-968592_1920.jpg";
+import CodeText from "../components/CodeText.astro";
+import ButtonFilled from "../components/ButtonFilled.astro";
+import BlogCard from "../components/BlogCard.astro";
 ---
 
 <Layout
     title="Blog | stevenem"
     description="The blog is still in development. Come back later to view my posts!"
 >
-    <div class="container page-offset">
-        <h1 class="mb-3">Blog</h1>
+    <Hero image={BlogImage} alt="Blog writing image">
+        <div>
+            <CodeText>Welcome to my Blog</CodeText>
+            <h1>Blog</h1>
+        </div>
 
-        <p>The blog is not done yet, please come back later ;)</p>
-    </div>
+        <p>Things I built, broke, learned, or just felt like writing about.</p>
+
+        <ButtonFilled href="#blog">
+            Show articles
+            {" "}
+            <i class="fa-solid fa-arrow-down"></i>
+        </ButtonFilled>
+    </Hero>
+
+    <section
+        class="container grid grid-cols-1 md:grid-cols-2 gap-10 py-25"
+        id="blog"
+    >
+        <BlogCard
+            title="Test title"
+            tags={["Test 123", "Test 456"]}
+            date={new Date("2026-08-20")}
+            summary="Test 1,2,3, WIP"
+            href="#"
+        />
+
+        <BlogCard
+            title="Test title"
+            tags={["Test 123", "Test 456"]}
+            date={new Date("2026-08-20")}
+            summary="Test 1,2,3, WIP"
+            href="#"
+        />
+
+        <BlogCard
+            title="Test title"
+            tags={["Test 123", "Test 456"]}
+            date={new Date("2026-08-20")}
+            summary="Test 1,2,3, WIP"
+            href="#"
+        />
+    </section>
 </Layout>
