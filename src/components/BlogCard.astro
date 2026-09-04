@@ -4,7 +4,7 @@ import ButtonBorder from "./ButtonBorder.astro";
 import { Image } from "astro:assets";
 
 interface Props {
-    image?: ImageMetadata;
+    image: string;
     alt?: string;
     title: string;
     tags: string[];
@@ -13,24 +13,14 @@ interface Props {
     href: string;
 }
 
-import NoImage from "../images/no-image.svg";
-
-const {
-    image = NoImage,
-    alt = "",
-    title,
-    tags = [],
-    date,
-    summary,
-    href,
-} = Astro.props;
+const { image, alt = "", title, tags = [], date, summary, href } = Astro.props;
 ---
 
 <article class="relative rounded-lg overflow-hidden">
-    <Image
+    <img
         src={image}
+        alt={alt}
         class="w-full aspect-1/1.5 md:aspect-video object-cover"
-        alt={alt ?? title}
     />
 
     <!-- Gradient Overlay -->

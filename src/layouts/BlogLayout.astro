@@ -1,0 +1,50 @@
+---
+const { frontmatter } = Astro.props;
+
+import Hero from "../components/Hero.astro";
+import Layout from "./Layout.astro";
+
+import Prose from "../components/Prose.astro";
+import ButtonBorder from "../components/ButtonBorder.astro";
+import ButtonFilled from "../components/ButtonFilled.astro";
+---
+
+<Layout title={frontmatter.seo.title} description={frontmatter.seo.description}>
+    <Hero image={frontmatter.image.url}>
+        <ButtonBorder href="/blog">
+            <i class="fa-solid fa-arrow-left"></i>
+            {" "}
+            Back
+        </ButtonBorder>
+
+        <h1>{frontmatter.title}</h1>
+
+        <div class="flex flex-wrap gap-2">
+            <p>Steven Roest</p>
+            <p>&bull;</p>
+            <p>
+                {
+                    new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                    })
+                }
+            </p>
+        </div>
+
+        <p>{frontmatter.summary}</p>
+
+        <ButtonFilled href="#blog-item">
+            Read item
+            {" "}
+            <i class="fa-solid fa-arrow-down"></i>
+        </ButtonFilled>
+    </Hero>
+
+    <section class="container py-25" id="blog-item">
+        <Prose>
+            <slot />
+        </Prose>
+    </section>
+</Layout>

@@ -6,11 +6,15 @@ import BlogImage from "../images/edar-diary-968592_1920.jpg";
 import CodeText from "../components/CodeText.astro";
 import ButtonFilled from "../components/ButtonFilled.astro";
 import BlogCard from "../components/BlogCard.astro";
+
+const allPosts = Object.values(
+    import.meta.glob("./blog/*.md", { eager: true }),
+);
 ---
 
 <Layout
-    title="Blog | stevenem"
-    description="The blog is still in development. Come back later to view my posts!"
+    title="Development blog written by Steven | stevenem"
+    description="In this blog I write about things I built, learned, or just felt like writing about."
 >
     <Hero image={BlogImage} alt="Blog writing image">
         <div>
@@ -18,7 +22,7 @@ import BlogCard from "../components/BlogCard.astro";
             <h1>Blog</h1>
         </div>
 
-        <p>Things I built, broke, learned, or just felt like writing about.</p>
+        <p>Things I built, learned, or just felt like writing about.</p>
 
         <ButtonFilled href="#blog">
             Show articles
@@ -31,28 +35,18 @@ import BlogCard from "../components/BlogCard.astro";
         class="container grid grid-cols-1 md:grid-cols-2 gap-10 py-25"
         id="blog"
     >
-        <BlogCard
-            title="Test title"
-            tags={["Test 123", "Test 456"]}
-            date={new Date("2026-08-20")}
-            summary="Test 1,2,3, WIP"
-            href="#"
-        />
-
-        <BlogCard
-            title="Test title"
-            tags={["Test 123", "Test 456"]}
-            date={new Date("2026-08-20")}
-            summary="Test 1,2,3, WIP"
-            href="#"
-        />
-
-        <BlogCard
-            title="Test title"
-            tags={["Test 123", "Test 456"]}
-            date={new Date("2026-08-20")}
-            summary="Test 1,2,3, WIP"
-            href="#"
-        />
+        {
+            allPosts.map((post: any) => (
+                <BlogCard
+                    image={post.frontmatter.image.url}
+                    alt={post.frontmatter.image.alt}
+                    title={post.frontmatter.title}
+                    tags={post.frontmatter.tags}
+                    date={new Date(post.frontmatter.pubDate)}
+                    summary={post.frontmatter.summary}
+                    href={post.url}
+                />
+            ))
+        }
     </section>
 </Layout>

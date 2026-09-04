@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 interface Props {
-	image: ImageMetadata;
+	image: ImageMetadata | string;
 	alt?: string;
 }
 
@@ -11,12 +11,23 @@ const { image, alt = "Hero image" } = Astro.props;
 
 <div class="relative min-h-screen">
 	<div class="absolute inset-0 lg:left-1/2">
-		<Image
-			src={image}
-			alt={alt}
-			class="h-full w-full object-cover brightness-50"
-			loading="eager"
-		/>
+		{
+			typeof image === "string" ? (
+				<img
+					src={image}
+					alt={alt}
+					class="h-full w-full object-cover brightness-50"
+					loading="eager"
+				/>
+			) : (
+				<Image
+					src={image}
+					alt={alt}
+					class="h-full w-full object-cover brightness-50"
+					loading="eager"
+				/>
+			)
+		}
 
 		<div
 			class="absolute inset-0 bg-linear-to-b from-transparent to-sem-black"
