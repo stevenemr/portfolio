@@ -14,7 +14,7 @@ import { Image } from "astro:assets";
 ---
 
 <div class="bg-sem-light-gray rounded-lg p-5">
-    <div class="flex items-center gap-3 mb-5">
+    <div class="flex flex-wrap items-center gap-3 mb-5">
         <Image
             src={image}
             height={80}
@@ -35,6 +35,6 @@ import { Image } from "astro:assets";
     </p>
 
     <div class="flex flex-wrap gap-3">
-        {tags.map((tag) => <Tag>{tag}</Tag>)}
+        {tags.map((tag: string) => <Tag>{tag}</Tag>)}
     </div>
 </div>

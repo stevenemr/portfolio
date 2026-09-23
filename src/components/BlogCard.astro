@@ -33,7 +33,7 @@ const { image, alt = "", title, tags = [], date, summary, href } = Astro.props;
             <h3 class="mb-2">{title}</h3>
 
             <div class="flex flex-wrap gap-2 items-center mb-2">
-                {tags.map((tag) => <Tag>{tag}</Tag>)}
+                {tags.map((tag: string) => <Tag>{tag}</Tag>)}
                 <p>&bull;</p>
                 <p>
                     {

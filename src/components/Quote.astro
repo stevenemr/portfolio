@@ -6,7 +6,7 @@ interface Props {
 
 const { authorImage, author } = Astro.props;
 
-import Quote from "../images/quote.svg";
+import Quote from "@images/quote.svg";
 import { Image } from "astro:assets";
 ---
 
@@ -18,7 +18,7 @@ import { Image } from "astro:assets";
     </p>
 
     <div class="flex justify-between">
-        <div class="flex items-center gap-5">
+        <div class="flex flex-wrap items-center gap-5">
             <Image
                 src={authorImage}
                 alt={author}
