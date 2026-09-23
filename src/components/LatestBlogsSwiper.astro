@@ -1,0 +1,62 @@
+---
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import BlogCard from "./BlogCard.astro";
+
+const latestPosts = Object.values(
+    import.meta.glob("../pages/blog/*.md", { eager: true }),
+);
+---
+
+<div class="swiper swiperLatestBlogs">
+    <div class="swiper-wrapper">
+        {
+            latestPosts.map((post: any) => (
+                <div class="swiper-slide">
+                    <BlogCard
+                        image={post.frontmatter.image.url}
+                        alt={post.frontmatter.image.alt}
+                        title={post.frontmatter.title}
+                        tags={post.frontmatter.tags}
+                        date={new Date(post.frontmatter.pubDate)}
+                        summary={post.frontmatter.summary}
+                        href={post.url}
+                    />
+                </div>
+            ))
+        }
+    </div>
+
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+<script>
+    import Swiper from "swiper";
+    import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+    new Swiper(".swiperLatestBlogs", {
+        modules: [Navigation, Pagination, Autoplay],
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+            },
+        },
+    });
+</script>

@@ -20,6 +20,11 @@
     --font-jetbrains-mono: 'Jetbrains Mono Variable', monospace;
 }
 
+:root {
+    --swiper-navigation-color: var(--color-sem-orange);
+    --swiper-pagination-color: var(--color-sem-orange);
+}
+
 @utility container {
     @apply mx-auto px-5;
 }

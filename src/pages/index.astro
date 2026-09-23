@@ -39,6 +39,8 @@ import LargeSocialButton from "../components/LargeSocialButton.astro";
 
 import Input from "../components/form/Input.astro";
 import TextArea from "../components/form/TextArea.astro";
+import BlogCard from "../components/BlogCard.astro";
+import LatestBlogsSwiper from "../components/LatestBlogsSwiper.astro";
 ---
 
 <Layout
@@ -324,6 +326,24 @@ import TextArea from "../components/form/TextArea.astro";
 				www.gehringenketelaars.nl
 			</a>
 		</Quote>
+	</div>
+
+	<div class="container mt-25">
+		<div class="text-center mb-10">
+			<CodeText>Sometimes I write</CodeText>
+			<h2 class="mb-3">Latest blog items</h2>
+		</div>
+
+		<div class="mb-10">
+			<LatestBlogsSwiper />
+		</div>
+
+		<div class="flex justify-center">
+			<ButtonFilled href="/blog">
+				Show more blog items <i class="fa-solid fa-arrow-right"
+				></i></ButtonFilled
+			>
+		</div>
 	</div>
 
 	<div class="container my-25" id="contact">
