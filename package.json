@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "wrangler-dev": "wrangler dev"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",

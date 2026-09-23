@@ -1,11 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Hero.astro";
 
-import BlogImage from "../images/edar-diary-968592_1920.jpg";
-import CodeText from "../components/CodeText.astro";
-import ButtonFilled from "../components/ButtonFilled.astro";
-import BlogCard from "../components/BlogCard.astro";
+import BlogImage from "@images/edar-diary-968592_1920.jpg";
+import CodeText from "@components/CodeText.astro";
+import ButtonFilled from "@components/ButtonFilled.astro";
+import BlogCard from "@components/BlogCard.astro";
 
 const allPosts = Object.values(
     import.meta.glob("./blog/*.md", { eager: true }),

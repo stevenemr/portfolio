@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BlogLayout.astro'
+layout: '@layouts/BlogLayout.astro'
 seo:
     title: 'stevenem is registered in Dutch Chamber of Commerce | Blog'
     description: "On 20 August 2026, my company 'stevenem' is officialy registred in the Dutch Chamber of Commerce."

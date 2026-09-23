@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BlogLayout.astro'
+layout: '@layouts/BlogLayout.astro'
 seo:
     title: 'Third year of the Floralia Voorthuizen votingpage | Blog'
     description: "On the 19th of september 2026, the 94th edition of Floralia Voorthuizen was held, with the third year of the voting page."
